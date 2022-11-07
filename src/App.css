@@ -1,13 +1,72 @@
+/* RESET */
+*,
+::after,
+::before
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
 .App{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 25px 40px 1fr;
-    gap: 5px;
-    margin: 30px;
+    font-family: 'Noto Sans','sans-serif';
+    display: block;
+    justify-content: center;
+    /*width: 1240px;
+    height: 1030px;*/
+
 }
-.logo{
-    grid-column: 2/3;
-    justify-self: self-start;
-    height: 40px;
-    width: 100px;
+.App::-webkit-scrollbar{
+    display: none;
+}
+#name,#price,#view{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 18px;
+    color: #069;
+  }
+.view{
+    text-align: center;
+}
+.displayList{
+    text-align: center;
+}
+.btn-add{
+    background-color: #0058AB;
+    border: none;
+    border-radius: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 3rem;
+
+    width: 60%;
+    outline: none;
+    font-size: .875rem;
+
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+
+    text-shadow: none;
+}
+.header{
+    display: flex;
+    white-space:normal;
+}
+.header-logo{
+    height: 30px;
+    width: 70px;
+
+}
+.footer{
+    background-color: #0058AB;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
 }

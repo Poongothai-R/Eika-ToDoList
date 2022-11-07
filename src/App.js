@@ -1,6 +1,9 @@
 import './App.css';
 import GetItemInput from './Form1';
 import ViewToDoList from './Viewlist';
+import Header from "./Header";
+import Welcome from "./Welcome";
+import Footer from "./Footer";
 import React, { useState, useEffect } from 'react';
 
 function App() {
@@ -26,11 +29,12 @@ function App() {
     let ToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
 
     const AddItemHandler = (e) => {
-        if (e.target.ItmName.value !== '' && e.target.ItmPrice.value !== '') {
+        console.log(typeof e.target.itemPrice);
+        if (e.target.itemName.value !== '' && e.target.itemPrice.value !== '') {
             const newTask = {
                 // id: new Date(),
-                name: e.target.ItmName.value,
-                price: e.target.ItmPrice.value
+                name: e.target.itemName.value,
+                price: Number(e.target.itemPrice.value)
             };
             setTask([...task, newTask]);
             task.push(newTask);
@@ -42,6 +46,7 @@ function App() {
 
     const AddAnotherItem = () => {
         setAnotherTask(1);
+        console.log(anotherTask);
     };
 
     const markItemComplete = (e) => {
@@ -70,15 +75,21 @@ function App() {
 
     return (
         <div className="App">
+            <Header/>
+            <div>
             {
-                ((ToDoList === null) || (anotherTask === 1))
+                ( (ToDoList === null) && (anotherTask === 0)) ?
+                    (<Welcome addNewItem={AddAnotherItem}/>) : ((anotherTask === 1)
                     ?
                     (<div> <GetItemInput AddItem={AddItemHandler} /></div>)
                     :
                     (<div> <ViewToDoList listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
-                                         checkboxHandle={markItemComplete}/></div>)
-
+                                         checkboxHandle={markItemComplete}/>
+                    </div>)
+                )
             }
+            </div>
+            <Footer/>
         </div>
     );
 }
