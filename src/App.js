@@ -77,6 +77,7 @@ function App() {
 
     return (
         <div className="App">
+            {/*---- Updated meta tag to prevent auto zoom in IOS devices because of font size below 16px-----*/}
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
             <Header/>
             <div>
