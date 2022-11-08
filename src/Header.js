@@ -15,12 +15,3 @@ function Header() {
 } export default Header;
 
 
-{/*<div><input type="text" class="search-input" placeholder="Search..." />
-                   <button><i className="fas fa-search search-icon"></i></button>
-
-                </div>*/}
-{ /*<div className="header-right">
-                <a href='.'><i className="fas fa-user user-icon"></i></a>
-                <a href='.'><i className="fas fa-heart heart-symbol"></i></a>
-                <a href='.'><i className="fas fa-shopping-cart cart"></i></a>
-            </div>*/}
