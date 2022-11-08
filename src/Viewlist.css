@@ -18,12 +18,14 @@
     grid-row: 2/3;
    grid-column: 2/2;
     white-space: nowrap;
+
 }
 .view_complete{
     grid-row: 3/3;
     grid-column: 2/2;
     white-space: nowrap;
     justify-content: center;
+
 
 }
 .view_item_card{
