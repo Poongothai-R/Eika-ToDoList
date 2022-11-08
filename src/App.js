@@ -1,12 +1,14 @@
 import './App.css';
 import GetItemInput from './Form1';
-import Viewlist from './Viewlist';
+import ViewList from './Viewlist';
 import Header from "./Header";
 import Welcome from "./Welcome";
 import Footer from "./Footer";
 import React, { useState, useEffect } from 'react';
 
 function App() {
+
+        // Initializing value for add another item, completed item
 
     const [task, setTask] = useState([]);
     const [completeTask, setCompleteTask] = useState([]);
@@ -51,12 +53,12 @@ function App() {
 
     const markItemComplete = (e) => {
         if (e.target.checked) {
-            let movetask = {
+            let moveTask = {
                 name: task[e.target.id].name,
                 price: task[e.target.id].price
             };
-            setCompleteTask([...completeTask,movetask]);
-            completeTask.push(movetask);
+            setCompleteTask([...completeTask,moveTask]);
+            completeTask.push(moveTask);
             window.localStorage.setItem('myCompleteList',JSON.stringify(completeTask));
 
             task.splice(e.target.id,1);
@@ -83,7 +85,7 @@ function App() {
                     ?
                     (<div> <GetItemInput AddItem={AddItemHandler} /></div>)
                     :
-                    (<div> <Viewlist listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
+                    (<div> <ViewList listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
                                          checkboxHandle={markItemComplete}/>
                     </div>)
                 )

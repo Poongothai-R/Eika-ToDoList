@@ -5,7 +5,6 @@ const GetItemInput = (props) => {
 
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
-    const [error,setError]=useState(false);
 
     const submitHandler = (e) => {
         e.preventDefault();

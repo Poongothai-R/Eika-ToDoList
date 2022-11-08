@@ -2,7 +2,7 @@ import "./Viewlist.css";
 import { useState } from "react";
 
 
-function Viewlist(props) {
+function ViewList(props) {
 
     let data = props.listData;
     let completeData = props.completeData;
@@ -18,6 +18,8 @@ function Viewlist(props) {
 
 
     /* Sort data based on user's input */
+    //---code refactoring----
+
     const sortDataHandle = (e) => {
         e.preventDefault();
         let objIndex = sortData.findIndex(id => id.sortBy === e.target.id);
@@ -124,4 +126,4 @@ function Viewlist(props) {
     );
 }
 
-export default Viewlist;
+export default ViewList;

@@ -22,10 +22,10 @@ function Welcome(props){
                         will ask you the name and the price of the item you want
                         to add. You can also and an image after the item is added
                         by touching the camera icon.
-                    </p>
+                    </p><br/><br/>
                </div>
            </div>
-
+            
             <button className="welcome_btn" onClick={addNewItem} > Add New Item </button>
 
         </div>
