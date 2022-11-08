@@ -11,13 +11,12 @@
     font-family: 'Noto Sans','sans-serif';
     display: block;
     justify-content: center;
-
-    /*width: 1240px;
-    height: 1030px;*/
+    overflow: hidden;
 
 }
-.App::-webkit-scrollbar{
+::-webkit-scrollbar{
     display: none;
+    width: 0;
 }
 #name,#price,#view{
     background: none!important;

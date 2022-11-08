@@ -13,7 +13,8 @@ function Welcome(props){
                </div><br/>
                <div className="welcome_txt">
                    <h1> EIKA'S Shopping List</h1><br/>
-                    <p>  Here you will be able to create a todo list
+                    <p> Welcome to the EIKA's shopping list. Here you will be able to create a
+                        to-do list
                         with for the furniture you want to buy.
                     </p>
                     <br/>
@@ -22,10 +23,10 @@ function Welcome(props){
                         will ask you the name and the price of the item you want
                         to add. You can also and an image after the item is added
                         by touching the camera icon.
-                    </p><br/><br/>
+                    </p><br/>
                </div>
            </div>
-            
+
             <button className="welcome_btn" onClick={addNewItem} > Add New Item </button>
 
         </div>

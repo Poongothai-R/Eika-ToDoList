@@ -34,3 +34,63 @@
     align-self: auto;
     justify-self: center;
 }
+
+@media screen and (max-width:600px){
+    .welcome{
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 300px;
+        gap: 10px;
+        position: relative;
+        padding-right: 3px;
+        padding-left: 3px;
+        font-size: 15px;
+    }
+    .welcome_img
+    {
+        height: 200px;
+        width:350px;
+        display: block;
+        text-align:center;
+        justify-self: center;
+        top: 0;
+    }
+
+}
+@media screen and (width:280px){
+    .welcome{
+        background-color: #fff;
+        display: block;
+        font-size: 10px;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .welcome_img
+    {
+        height: 200px;
+        width:280px;
+        display: block;
+        text-align:center;
+        justify-self: center;
+        top: 0;
+    }
+    .welcome_content {
+        text-align: center;
+    }
+    .welcome_btn {
+        text-align: center;
+        background-color: #0058AB;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width:250px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 10px;
+        align-self: auto;
+        justify-self: center;
+
+    }
+}
