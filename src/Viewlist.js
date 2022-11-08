@@ -1,37 +1,55 @@
+import "./Viewlist.css";
 import { useState } from "react";
 
-function ViewToDoList(props) {
+
+function Viewlist(props) {
 
     let data = props.listData;
     let completeData = props.completeData;
+
+    /* sort data variable declaration */
     const [displayFlag, setDisplayFlag] = useState(false);
     const [sortFlag, setSortFlag] = useState(false);
-    const [sortOrder, setSortOrder] = useState(1);
+    const [sortData, setSortData] = useState([]);
+    let sortObj = {
+        sortBy: null,
+        sortOrder: null
+    };
 
-    const sortName = (e) => {
-        setSortOrder (sortOrder>1 ? 0 : sortOrder+1);
-        switch(sortOrder) {
-            case 1:
-                data.sort((a, b) => (a.name > b.name) ? 1 : (a.name < b.name ? -1 : 0));
+
+    /* Sort data based on user's input */
+    const sortDataHandle = (e) => {
+        e.preventDefault();
+        let objIndex = sortData.findIndex(id => id.sortBy === e.target.id);
+        if (objIndex === -1) {
+            sortObj=({
+                sortBy: e.target.id,
+                sortOrder: 'asc'
+            });
+            setSortData([...sortData, sortObj]);
+        }
+        else if (objIndex > -1) {
+            let objOrder = sortData[objIndex].sortOrder;
+            sortObj=({
+                sortBy: e.target.id,
+                sortOrder: (objOrder === 'asc') ? 'desc' : 'asc'
+            });
+
+            sortData[objIndex] = sortObj;
+        }
+        // console.log(sortObj);
+        setSortFlag(true);
+        switch (sortObj.sortOrder) {
+            case 'asc':
+                data.sort((a, b) => (a[sortObj.sortBy] > b[sortObj.sortBy]) ? 1 : (a[sortObj.sortBy] < b[sortObj.sortBy] ? -1 : 0));
                 break;
-            case 2:
-                data.sort((a, b) => (a.name > b.name) ? -1 : (a.name < b.name ? 1 : 0));
+            case 'desc':
+                data.sort((a, b) => (a[sortObj.sortBy] > b[sortObj.sortBy]) ? -1 : (a[sortObj.sortBy] < b[sortObj.sortBy] ? 1 : 0));
                 break;
             default:
-                window.location.reload();
-                data = props.listData;
                 break;
         }
-        e.preventDefault();
-        setSortFlag(true);
-        // console.log(data);
-    }
-
-    const sortPrice = (e) => {
-        data.sort((a, b) => (a.price > b.price) ? 1 : (a.price < b.price ? -1 : 0));
-        e.preventDefault();
-        setSortFlag(true);
-    }
+    };
 
     const addNewItem = (e) => {
         e.preventDefault();
@@ -55,9 +73,17 @@ function ViewToDoList(props) {
 
     const renderViewItem =  data.map((recs, index) => {
         return (
-            <div key={index}>
+            <div key={index} className="view_item_card">
+                <div className="view_item_left">
                 <input type="checkBox" id={`${index}`} onChange={handleView}></input>
+                </div>
+                <div  className="view_item_center">
                 <label><span> {recs.name}</span> , <span>{recs.price}</span></label>
+                </div>
+                <div  className="view_item_right">
+                {/*<a><img className="upload_img" src="/img/img.png" alt="upload image"/></a>*/}
+                  <button className="upload_img"> <i className="fa fa-solid fa-image" aria-hidden="true"/></button>
+                </div>
             </div>
         );
     });
@@ -67,7 +93,7 @@ function ViewToDoList(props) {
 
     const renderCompleteItem = completeData.map((recs, index) => {
         return (
-            <div key={index}>
+            <div key={index} className="complete_data_card">
                 <label><span> {recs.name}</span> , <span>{recs.price}</span></label>
                 <br />
             </div>
@@ -75,23 +101,27 @@ function ViewToDoList(props) {
     });
 
     return (
-        <div style={{ textAlign: "center" }}>
-            <h1> welcome to List page.</h1>
-            <h3> Sort by:
-                <span /> <button onClick={sortName}>name </button>
-                <span /> <button onClick={sortPrice}>price</button>
-            </h3>
-            {renderViewItem}
-            <br />
-            <button onClick={addNewItem}> Add New Item </button>
-            <br /> <br />
-            <button onClick={handleComplete}> view completed items</button>
-            <br /><br />
-            {
+        <div className="view_list">
+            <div className="view_header">
+                <h2> Shopping List </h2><br/>
+                <h4> Sort by:
+                <span /> <button  className="sort-button" id="name" onClick={sortDataHandle}>Name </button>
+                <span /> <button  className="sort-button" id="price" onClick={sortDataHandle}>Price</button>
+                </h4>
+            </div>
+            <div className="view_display">
+                {renderViewItem}<br/><br/>
+                <button className="add-button" id="addItem" onClick={addNewItem}> Add Item </button>
+            </div>
+            <div className="view_complete">
+                <br/><br/>
+                <button className="complete-button" id="viewItem" onClick={handleComplete}> view completed items</button><br/><br/>
+                {
                 (displayFlag === true) ? renderCompleteItem : null
-            }
+                }
+            </div>
         </div>
     );
 }
 
-export default ViewToDoList;
+export default Viewlist;

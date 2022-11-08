@@ -1,0 +1,37 @@
+
+.InputLst {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    gap: 5px 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: Noto Sans,sans-serif;
+}
+
+.InputLst_header {
+    grid-column: 2/3;
+    justify-self: center;
+}
+
+.InputLst_form{
+    grid-column: 2/3;
+    grid-row: 2/2;
+    justify-self: center;
+}
+
+.btn-save{
+    text-align: center;
+}
+
+.form_btn{
+    height: 40px;
+    width: 120px;
+    background-color: #0058ab;
+    color: #fff;
+    border-radius: 50px;
+    }
+
+.lbl_itm{
+
+}

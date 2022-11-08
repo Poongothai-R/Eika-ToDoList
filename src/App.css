@@ -54,19 +54,4 @@
 
     text-shadow: none;
 }
-.header{
-    display: flex;
-    white-space:normal;
-}
-.header-logo{
-    height: 30px;
-    width: 70px;
 
-}
-.footer{
-    background-color: #0058AB;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 0;
-}

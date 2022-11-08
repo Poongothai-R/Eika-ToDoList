@@ -1,0 +1,10 @@
+.footer {
+    position: fixed;
+
+    font-family: Noto sans;
+    color: #0058AB;
+    text-align: center;
+    left: 0;
+    bottom: 2mm;
+    width: 100%;
+}

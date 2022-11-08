@@ -1,6 +1,6 @@
 import './App.css';
 import GetItemInput from './Form1';
-import ViewToDoList from './Viewlist';
+import Viewlist from './Viewlist';
 import Header from "./Header";
 import Welcome from "./Welcome";
 import Footer from "./Footer";
@@ -83,7 +83,7 @@ function App() {
                     ?
                     (<div> <GetItemInput AddItem={AddItemHandler} /></div>)
                     :
-                    (<div> <ViewToDoList listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
+                    (<div> <Viewlist listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
                                          checkboxHandle={markItemComplete}/>
                     </div>)
                 )
