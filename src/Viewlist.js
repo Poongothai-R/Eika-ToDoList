@@ -80,7 +80,7 @@ function ViewList(props) {
                 <input type="checkBox" id={`${index}`} onChange={handleView}></input>
                 </div>
                 <div  className="view_item_center">
-                <label><span> {recs.name}</span> , <span>{recs.price}</span></label>
+                <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price +" kr"}</span></label>
                 </div>
                 <div  className="view_item_right">
                 {/*<a><img className="upload_img" src="/img/img.png" alt="upload image"/></a>*/}
@@ -96,7 +96,7 @@ function ViewList(props) {
     const renderCompleteItem = completeData.map((recs, index) => {
         return (
             <div key={index} className="complete_data_card">
-                <label><span> {recs.name}</span> , <span>{recs.price}</span></label>
+                <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price+" kr"}</span></label>
                 <br />
             </div>
         );
