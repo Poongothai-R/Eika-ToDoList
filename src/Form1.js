@@ -34,7 +34,7 @@ const GetItemInput = (props) => {
             if (e.target.itemPrice.value === "") itmPrice = "Item Price is Required";
 
         } else if (duplicateData.includes(e.target.itemName.value.toString().toUpperCase()))
-            chkData = "Item Name is already in the list";
+            chkData = "Item already exists in the list";
         else props.AddItem(e);
 
 
