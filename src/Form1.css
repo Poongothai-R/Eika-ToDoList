@@ -12,6 +12,7 @@
 .InputLst_header {
     grid-column: 2/3;
     justify-self: center;
+    font-size: 1rem;
 }
 
 .InputLst_form{
@@ -30,8 +31,18 @@
     background-color: #0058ab;
     color: #fff;
     border-radius: 50px;
+    border: none;
     }
 
-.lbl_itm{
-
+#itemName{
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+#itemPrice{
+    box-sizing: border-box;
+    border: 2px solid black;
+}
+.error{
+    font-size: 0.8rem;
+    color:red;
 }
