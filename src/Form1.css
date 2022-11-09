@@ -2,7 +2,7 @@
 .InputLst {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr ;
+    grid-template-rows: 0.5fr 1fr ;
     gap: 5px 5px;
     justify-content: center;
     align-items: center;

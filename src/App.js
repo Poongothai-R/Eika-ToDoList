@@ -85,7 +85,7 @@ function App() {
                 ( (ToDoList === null) && (anotherTask === 0)) ?
                     (<Welcome addNewItem={AddAnotherItem}/>) : ((anotherTask === 1)
                     ?
-                    (<div> <GetItemInput AddItem={AddItemHandler} /></div>)
+                    (<div> <GetItemInput checkData = {task} AddItem={AddItemHandler} /></div>)
                     :
                     (<div> <ViewList listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
                                          checkboxHandle={markItemComplete}/>
