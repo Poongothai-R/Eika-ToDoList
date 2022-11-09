@@ -14,7 +14,7 @@ const GetItemInput = (props) => {
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
     const [error, setError] = useState({});
-    const [isSubmit, setIsSubmit] = useState('false');
+    /*const [isSubmit, setIsSubmit] = useState('false');*/
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -44,18 +44,18 @@ const GetItemInput = (props) => {
             checkData: chkData
         });
 
-        setIsSubmit('true');
+        //setIsSubmit('true');
 
     }
 
-    if(isSubmit){
+    /*if(isSubmit){
         console.log(error.itemName);
     }
-
+*/
 
     return (
         <div className="InputLst">
-            <div className="InputLst_header"><h2> ADD ITEM </h2></div>
+            <div className="InputLst_header"><h2>Add item</h2></div>
             <form className="InputLst_form" onSubmit={submitHandler}>
                 <label className="lbl_itm">Item Name: </label>
                 <input type="text" value={itemName} id="itemName" placeholder="Enter Item name"
