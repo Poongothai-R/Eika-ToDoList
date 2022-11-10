@@ -27,7 +27,7 @@ function Welcome(props){
                </div>
            </div>
 
-            <button className="welcome_btn" onClick={addNewItem} > Add New Item </button>
+            <button className="welcome_btn" onClick={addNewItem} > Add item </button>
 
         </div>
     );

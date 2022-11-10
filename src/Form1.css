@@ -4,8 +4,9 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 1fr ;
     gap: 5px 5px;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items:center;
+    text-align: left;
     font-family: Noto Sans,sans-serif;
 }
 
@@ -20,6 +21,9 @@
 .InputLst_form{
     grid-column: 2/3;
     grid-row: 2/2;
+   display: block;
+    text-align: center;
+    justify-content: center;
 
 }
 
@@ -29,7 +33,7 @@
 
 .form_btn{
     height: 40px;
-    width: 120px;
+    width: 100px;
     background-color: #0058ab;
     color: #fff;
     border-radius: 50px;
@@ -39,12 +43,68 @@
 #itemName{
     box-sizing: border-box;
     border: 2px solid black;
+    display: block;
+
 }
 #itemPrice{
     box-sizing: border-box;
     border: 2px solid black;
+    display: block;
 }
 .error{
     font-size: 0.8rem;
     color:red;
+}
+.lbl_itm{
+
+    text-align: left;
+    font-size: 20px;
+    display: block;
+}
+@media screen and (min-width:700px){
+    .InputLst{
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 300px;
+        gap: 10px;
+        position: relative;
+        padding-right: 3px;
+        padding-left: 3px;
+        font-size: 15px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .InputLst_form{
+        grid-column: 2/3;
+        grid-row: 2/2;
+        display: grid;
+        text-align: center;
+        justify-content: center;
+
+    }
+    .lbl_itm{
+
+
+        font-size: 20px;
+        display: block;
+        text-align: left;
+    }
+    #itemName{
+        box-sizing: border-box;
+        border: 2px solid black;
+        display: block;
+
+        height:30px;
+        width:300px;
+
+    }
+    #itemPrice{
+        box-sizing: border-box;
+        border: 2px solid black;
+        display: block;
+        height:30px;
+        width:300px;
+    }
 }
