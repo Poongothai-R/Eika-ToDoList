@@ -42,14 +42,18 @@
 
 #itemName{
     box-sizing: border-box;
-    border: 2px solid black;
+    border: 2px solid #000;
     display: block;
+    height:25px;
+    width:200px;
 
 }
 #itemPrice{
     box-sizing: border-box;
-    border: 2px solid black;
+    border: 2px solid #000;
     display: block;
+    height:26px;
+    width:200px;
 }
 .error{
     font-size: 0.8rem;

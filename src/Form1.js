@@ -62,7 +62,7 @@ const GetItemInput = (props) => {
                        onChange={(e) => setItemName(e.target.value)}>
                 </input>
                 <label className="error"><br/> {error.itemName}</label>
-                <br/>
+                <br/><br/>
                 <label className="lbl_itm">Item Price: </label>
                 <input type="number" value={itemPrice} id="itemPrice" placeholder="Enter Number only"
                        onChange={(e) => setItemPrice(e.target.value)}>
