@@ -84,7 +84,7 @@ function ViewList(props) {
                 </div>
                 <div  className="view_item_right">
                 {/*<a><img className="upload_img" src="/img/img.png" alt="upload image"/></a>*/}
-                  <button className="upload_img"> <i className="fa fa-solid fa-image" aria-hidden="true"/></button>
+                  <button className="upload_img" > <i className="fa fa-solid fa-image" aria-hidden="true"/></button>
                 </div>
             </div>
         );
