@@ -4,16 +4,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 1fr ;
     gap: 5px 5px;
-    justify-content: left;
     align-items:center;
-    text-align: left;
+    text-align: center;
     font-family: Noto Sans,sans-serif;
 }
 
 .InputLst_header {
     grid-column: 2/3;
     justify-self: center;
-    align-items: center;
     text-align: center;
     font-size: 15px;
 }
@@ -23,14 +21,7 @@
     grid-row: 2/2;
    display: block;
     text-align: center;
-    justify-content: center;
-
 }
-
-.btn-save{
-    text-align: center;
-}
-
 .form_btn{
     height: 40px;
     width: 100px;
@@ -56,9 +47,12 @@
     width:200px;
 }
 .error{
+    text-align: left;
     font-size: 0.8rem;
     color:red;
+
 }
+
 .lbl_itm{
 
     text-align: left;
@@ -89,10 +83,11 @@
 
     }
     .lbl_itm{
-
-
         font-size: 20px;
         display: block;
+        text-align: left;
+    }
+    .error{
         text-align: left;
     }
     #itemName{
