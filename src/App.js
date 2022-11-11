@@ -1,5 +1,5 @@
 import './App.css';
-import GetItemInput from './Form1';
+import GetItemInput from './Inputform';
 import ViewList from './Viewlist';
 import Header from "./Header";
 import Welcome from "./Welcome";
