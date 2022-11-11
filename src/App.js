@@ -6,6 +6,7 @@ import Welcome from "./Welcome";
 import Footer from "./Footer";
 import React, { useState, useEffect } from 'react';
 
+
 function App() {
 
         // Initializing value for add another item, completed item
@@ -31,10 +32,8 @@ function App() {
     let ToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
 
     const AddItemHandler = (e) => {
-        console.log(typeof e.target.itemPrice);
-        if (e.target.itemName.value !== '' && e.target.itemPrice.value !== '') {
+
             const newTask = {
-                // id: new Date(),
                 name: e.target.itemName.value,
                 price: Number(e.target.itemPrice.value)
             };
@@ -42,7 +41,7 @@ function App() {
             task.push(newTask);
             localStorage.setItem('myToDoList', JSON.stringify(task));
             setAnotherTask(0);
-        }
+
     };
 
 
@@ -64,26 +63,25 @@ function App() {
             task.splice(e.target.id,1);
             window.localStorage.setItem('myToDoList', JSON.stringify(task));
 
-            // let ToDoListCount = JSON.parse(window.localStorage.getItem('myToDoList')).length;
-            // if (ToDoListCount===0) {
-            //   window.localStorage.removeItem('myToDoList');
-            // }
-
         }
     };
 
-    //  console.log(anotherTask);
+
 
 
     return (
         <div className="App">
+
             {/*---- Updated meta tag to prevent auto zoom in IOS devices because of font size below 16px-----*/}
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
             <Header/>
+
             <div>
             {
                 ( (ToDoList === null) && (anotherTask === 0)) ?
-                    (<Welcome addNewItem={AddAnotherItem}/>) : ((anotherTask === 1)
+                    (<Welcome addNewItem={AddAnotherItem}/>)
+                    : ((anotherTask === 1)
                     ?
                     (<div> <GetItemInput checkData = {task} AddItem={AddItemHandler} /></div>)
                     :
@@ -93,7 +91,9 @@ function App() {
                 )
             }
             </div>
+
             <Footer/>
+
         </div>
     );
 }

@@ -7,7 +7,7 @@ function ViewList(props) {
     let data = props.listData;
     let completeData = props.completeData;
 
-    /* sort data variable declaration */
+    /* sort-data variable declaration */
     const [displayFlag, setDisplayFlag] = useState(false);
     const [sortFlag, setSortFlag] = useState(false);
     const [sortData, setSortData] = useState([]);
