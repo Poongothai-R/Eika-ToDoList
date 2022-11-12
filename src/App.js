@@ -9,18 +9,23 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
 
-        // Initializing value for add another item, completed item
+        // Initializing value for add another item to mtToDoLIst and completed item to myCompleteList...
 
     const [task, setTask] = useState([]);
     const [completeTask, setCompleteTask] = useState([]);
     const [anotherTask, setAnotherTask] = useState(0);
 
+    let ToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
+
+
     useEffect(() => {
         let myLocalToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
+        //console.log(myLocalToDoList);
         if (myLocalToDoList) {
             setTask(myLocalToDoList);
         }
     }, []);
+
 
     useEffect(() => {
         let myLocalCompleteList = JSON.parse(window.localStorage.getItem('myCompleteList'));
@@ -29,8 +34,9 @@ function App() {
         }
     }, []);
 
-    let ToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
 
+
+    // To add item into myToDoList...
     const AddItemHandler = (e) => {
 
             const newTask = {
@@ -44,13 +50,15 @@ function App() {
 
     };
 
-
+    // To get the input form...
     const AddAnotherItem = () => {
         setAnotherTask(1);
-        console.log(anotherTask);
+        //console.log(anotherTask);
     };
 
+    //To move the selected item from myToDoList to myCompleteList
     const markItemComplete = (e) => {
+
         if (e.target.checked) {
             let moveTask = {
                 name: task[e.target.id].name,
@@ -64,8 +72,8 @@ function App() {
             window.localStorage.setItem('myToDoList', JSON.stringify(task));
 
         }
-    };
 
+    };
 
 
 
@@ -76,6 +84,8 @@ function App() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
             <Header/>
+
+            {/* main body based on the list state */}
 
             <div>
             {

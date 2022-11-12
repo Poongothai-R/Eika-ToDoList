@@ -39,7 +39,6 @@ function ViewList(props) {
 
             sortData[objIndex] = sortObj;
         }
-        // console.log(sortObj);
         setSortFlag(true);
         switch (sortObj.sortOrder) {
             case 'asc':
@@ -59,13 +58,16 @@ function ViewList(props) {
     }
 
     const handleView = (e) => {
+
         e.preventDefault();
         props.checkboxHandle(e);
     }
 
     const handleComplete = (e) => {
-        setDisplayFlag(!displayFlag);
+
+
         e.preventDefault();
+        setDisplayFlag(!displayFlag);
     }
 
     if(sortFlag) {
@@ -73,18 +75,19 @@ function ViewList(props) {
         console.log(data);
     }
 
+    // To view the items in the list...
+
     const renderViewItem =  data.map((recs, index) => {
         return (
             <div key={index} className="view_item_card">
                 <div className="view_item_left">
-                <input type="checkBox" id={`${index}`} onChange={handleView}></input>
+                <input type="checkBox" id={`${index}`} onClick={handleView}></input>
                 </div>
                 <div  className="view_item_center">
                 <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price +" kr"}</span></label>
                 </div>
                 <div  className="view_item_right">
-                {/*<a><img className="upload_img" src="/img/img.png" alt="upload image"/></a>*/}
-                  <button className="upload_img" > <i className="fa fa-solid fa-image" aria-hidden="true"/></button>
+                    <button className="upload_img" > <i className="fa fa-solid fa-image" aria-hidden="true"/></button>
                 </div>
             </div>
         );
@@ -92,6 +95,7 @@ function ViewList(props) {
 
 
 
+    // To view the items in the completed list...
 
     const renderCompleteItem = completeData.map((recs, index) => {
         return (
