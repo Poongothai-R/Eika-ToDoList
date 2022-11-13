@@ -23,7 +23,7 @@
 .welcome_btn {
     grid-row: 2/2;
     grid-column: 2/3;
-    background-color: #0058AB;
+    background: #0058a3;
     justify-content: center;
     align-items: center;
     height: 50px;
@@ -33,6 +33,7 @@
     font-size: 24px;
     align-self: auto;
     justify-self: center;
+    border:none;
 }
 
 @media screen and (max-width:600px){

@@ -55,20 +55,25 @@ function ViewList(props) {
     const addNewItem = (e) => {
         e.preventDefault();
         props.addAnotherItem(e);
-    }
+    };
 
     const handleView = (e) => {
 
         e.preventDefault();
         props.checkboxHandle(e);
-    }
+    };
 
     const handleComplete = (e) => {
 
 
         e.preventDefault();
         setDisplayFlag(!displayFlag);
-    }
+    };
+
+    const imgHandler = (e) => {
+        e.preventDefault();
+        props.addImage(e);
+    };
 
     if(sortFlag) {
         setSortFlag(false);
@@ -87,7 +92,11 @@ function ViewList(props) {
                 <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price +" kr"}</span></label>
                 </div>
                 <div  className="view_item_right">
-                    <button className="upload_img" > <i className="fa fa-solid fa-image" aria-hidden="true"/></button>
+                    {/*<button className="upload_img" > <i className="fa fa-solid fa-image" aria-hidden="true"/></button>*/}
+                    <label htmlFor={("upload-img-").concat(`${index}`)}>
+                        <i className="fa fa-solid fa-image" aria-hidden="true"/>
+                    </label>
+                    <input type="file" id={("upload-img-").concat(`${index}`)} style={{display:"none"}} onChange={imgHandler}></input>
                 </div>
             </div>
         );

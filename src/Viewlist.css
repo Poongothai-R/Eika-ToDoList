@@ -67,6 +67,7 @@ text-align: left;
     font-size: 24px;
     cursor: pointer;
     top: 10%;
+    border: none;
 }
 
 .todo {

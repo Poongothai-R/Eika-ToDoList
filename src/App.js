@@ -14,6 +14,7 @@ function App() {
     const [task, setTask] = useState([]);
     const [completeTask, setCompleteTask] = useState([]);
     const [anotherTask, setAnotherTask] = useState(0);
+    // const [image, setImage] = useState({});
 
     let ToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
 
@@ -41,7 +42,8 @@ function App() {
 
             const newTask = {
                 name: e.target.itemName.value,
-                price: Number(e.target.itemPrice.value)
+                price: Number(e.target.itemPrice.value),
+                preview: null
             };
             setTask([...task, newTask]);
             task.push(newTask);
@@ -62,7 +64,8 @@ function App() {
         if (e.target.checked) {
             let moveTask = {
                 name: task[e.target.id].name,
-                price: task[e.target.id].price
+                price: task[e.target.id].price,
+                image: task[e.target.id].img
             };
             setCompleteTask([...completeTask,moveTask]);
             completeTask.push(moveTask);
@@ -72,9 +75,16 @@ function App() {
             window.localStorage.setItem('myToDoList', JSON.stringify(task));
 
         }
-
     };
 
+    const uploadImgHandler = (e) => {
+        // console.log(e);
+        let itemIdx = (e.target.id).substring(11,)  ;
+        console.log(itemIdx);
+        task[itemIdx].preview=URL.createObjectURL(e.target.files[0]);
+        window.localStorage.setItem('myToDoList', JSON.stringify(task));
+
+    }
 
 
     return (
@@ -96,7 +106,7 @@ function App() {
                     (<div> <GetItemInput checkData = {task} AddItem={AddItemHandler} /></div>)
                     :
                     (<div> <ViewList listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
-                                         checkboxHandle={markItemComplete}/>
+                                         checkboxHandle={markItemComplete} addImage={uploadImgHandler}/>
                     </div>)
                 )
             }

@@ -30,10 +30,11 @@ const GetItemInput = (props) => {
      let dataList= (e.target.itemName.value.toString().toUpperCase());
 
      // checking empty input fields and duplicate data
-     if (e.target.itemName.value === "" || e.target.itemPrice.value === "")
+     if (e.target.itemName.value === "" || e.target.itemPrice.value === "" || e.target.itemPrice.value === "0")
      {
          if (e.target.itemName.value === "") itmName = "Item Name is Required";
-         if (e.target.itemPrice.value === "") itmPrice = "Item Price is Required";
+         if (e.target.itemPrice.value === "" ) itmPrice = "Item Price is Required";
+         if(e.target.itemPrice.value === "0") itmPrice = "Item Price should be greater than Zero";
 
      }
      else if (duplicateData.includes(dataList))
@@ -59,8 +60,9 @@ const GetItemInput = (props) => {
 
                 {/*label,input box and error message for item name */ }
                 <label className="lbl_itm">Item Name: </label>
-                <input type="text" value={itemName} id="itemName" placeholder="Enter Item name"
-                       onChange={(e) => setItemName(e.target.value)}>
+                <input type="text" autoFocus
+                       onFocus={e => e.currentTarget.select()} value={itemName} id="itemName" placeholder="Enter Item name"
+                       onChange={(e) => setItemName(e.target.value) }>
                 </input>
                 <label className="error">{error.itemName}</label>
                 <br/>
