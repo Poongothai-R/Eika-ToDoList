@@ -15,7 +15,7 @@ function App() {
     const [task, setTask] = useState([]);
     const [completeTask, setCompleteTask] = useState([]);
     const [anotherTask, setAnotherTask] = useState(0);
-    // const [image, setImage] = useState({});
+    const [taskFlag,setTaskFlag] = useState(false);
 
     let ToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
 
@@ -104,6 +104,7 @@ function App() {
             console.log(image);
            task[itemIdx].preview = image;
             window.localStorage.setItem("myToDoList",JSON.stringify(task));
+            setTaskFlag(true);
         } catch (err) {
             console.log(err);
         }
@@ -111,7 +112,10 @@ function App() {
         // window.localStorage.setItem('myToDoList', JSON.stringify(task));
 
     };
-
+        if(taskFlag)
+        {
+            setTaskFlag(false);
+        }
 
     return (
         <div className="App">
