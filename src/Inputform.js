@@ -29,6 +29,7 @@ const GetItemInput = (props) => {
      let chkData = null;
      let dataList= (e.target.itemName.value.toString().toUpperCase());
 
+
      // checking empty input fields and duplicate data
      if (e.target.itemName.value === "" || e.target.itemPrice.value === "" || e.target.itemPrice.value === "0")
      {
