@@ -72,6 +72,7 @@ function ViewList(props) {
 
     const imgHandler = (e) => {
         e.preventDefault();
+        console.log(e.target.id);
         props.addImage(e);
     };
 
@@ -94,7 +95,11 @@ function ViewList(props) {
                 <div  className="view_item_right">
                     {/*<button className="upload_img" > <i className="fa fa-solid fa-image" aria-hidden="true"/></button>*/}
                     <label htmlFor={("upload-img-").concat(`${index}`)}>
-                        <i className="fa fa-solid fa-image" aria-hidden="true"/>
+                        { recs.preview ?
+                            ( <img className= "itemImage" src={(recs.preview).toString()} alt="ItemImage"  ></img>)
+                            :
+                            (<i className="itemImage fa fa-image"></i>)
+                        }
                     </label>
                     <input type="file" id={("upload-img-").concat(`${index}`)} style={{display:"none"}} onChange={imgHandler}></input>
                 </div>
@@ -109,7 +114,15 @@ function ViewList(props) {
     const renderCompleteItem = completeData.map((recs, index) => {
         return (
             <div key={index} className="complete_data_card">
-                <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price+" kr"}</span></label>
+                <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price+" kr"}</span>
+                    <span>
+                         { recs.preview ?
+                             ( <img className= "itemImage" src={(recs.preview).toString()} alt="ItemImage"  ></img>)
+                             :
+                             (<i className="itemImage fa fa-image"></i>)
+                         }
+                    </span>
+                </label>
                 <br />
             </div>
         );

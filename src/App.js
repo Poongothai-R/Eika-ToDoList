@@ -5,6 +5,7 @@ import Header from "./Header";
 import Welcome from "./Welcome";
 import Footer from "./Footer";
 import React, { useState, useEffect } from 'react';
+import Resizer from "react-image-file-resizer";
 
 
 function App() {
@@ -65,7 +66,7 @@ function App() {
             let moveTask = {
                 name: task[e.target.id].name,
                 price: task[e.target.id].price,
-                image: task[e.target.id].img
+                preview: task[e.target.id].preview
             };
             setCompleteTask([...completeTask,moveTask]);
             completeTask.push(moveTask);
@@ -77,14 +78,39 @@ function App() {
         }
     };
 
-    const uploadImgHandler = (e) => {
+    const resizeFile = (file) =>
+        new Promise((resolve) => {
+            Resizer.imageFileResizer(
+                file,
+                30,
+                30,
+                "JPEG",
+                100,
+                0,
+                (uri) => {
+                    resolve(uri);
+                },
+                "base64"
+            );
+        });
+
+    const uploadImgHandler = async (e) => {
         // console.log(e);
         let itemIdx = (e.target.id).substring(11,)  ;
         console.log(itemIdx);
-        task[itemIdx].preview=URL.createObjectURL(e.target.files[0]);
-        window.localStorage.setItem('myToDoList', JSON.stringify(task));
+        try {
+            const file = e.target.files[0];
+            const image = await resizeFile(file);
+            console.log(image);
+           task[itemIdx].preview = image;
+            window.localStorage.setItem("myToDoList",JSON.stringify(task));
+        } catch (err) {
+            console.log(err);
+        }
+        // task[itemIdx].preview=URL.createObjectURL(e.target.files[0]);
+        // window.localStorage.setItem('myToDoList', JSON.stringify(task));
 
-    }
+    };
 
 
     return (
