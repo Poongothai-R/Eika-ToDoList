@@ -33,6 +33,7 @@
     padding-top: 10px;
     gap: 10px;
     justify-self: center;
+    align-items: center;
 
 }
 .view_item_left{
