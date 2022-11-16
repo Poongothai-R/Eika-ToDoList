@@ -18,7 +18,7 @@ function ViewList(props) {
 
 
     /* Sort data based on user's input */
-    //---code refactoring----
+    //--- applied code refactoring technique to sort the data by price and item name ----
 
     const sortDataHandle = (e) => {
         e.preventDefault();
@@ -52,34 +52,33 @@ function ViewList(props) {
         }
     };
 
+    // for re-rendering component once sort flag set
+    if(sortFlag) {
+        setSortFlag(false);
+    }
+
+
+    //add new item handler
     const addNewItem = (e) => {
         e.preventDefault();
         props.addAnotherItem(e);
     };
-
+    //mark completed item handler
     const handleView = (e) => {
-
         e.preventDefault();
         props.checkboxHandle(e);
     };
 
+    // To view the completed item handler
     const handleComplete = (e) => {
-
-
         e.preventDefault();
         setDisplayFlag(!displayFlag);
     };
-
+    // upload the image  handler
     const imgHandler = (e) => {
         e.preventDefault();
-        console.log(e.target.id);
         props.addImage(e);
     };
-
-    if(sortFlag) {
-        setSortFlag(false);
-        console.log(data);
-    }
 
     // To view the items in the list...
 
@@ -131,6 +130,7 @@ function ViewList(props) {
             </div>
         );
     });
+
 
     return (
         <div className="view_list">

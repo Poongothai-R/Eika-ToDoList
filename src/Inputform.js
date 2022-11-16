@@ -42,7 +42,7 @@ const GetItemInput = (props) => {
          chkData = "Item already exists in the list";
      else  props.AddItem(e);
 
-
+    // setting Error message...
      setError({
          itemName: itmName,
          itemPrice: itmPrice,
@@ -51,6 +51,7 @@ const GetItemInput = (props) => {
       });
 
  }
+
 
     return (
         <div className="InputLst">

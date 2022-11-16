@@ -10,7 +10,7 @@ import Resizer from "react-image-file-resizer";
 
 function App() {
 
-        // Initializing value for add another item to mtToDoLIst and completed item to myCompleteList...
+        // Initializing value for add another item to myToDoLIst and completed item to myCompleteList...
 
     const [task, setTask] = useState([]);
     const [completeTask, setCompleteTask] = useState([]);
@@ -78,6 +78,7 @@ function App() {
         }
     };
 
+    // Resize the file for better uploading speed...
     const resizeFile = (file) =>
         new Promise((resolve) => {
             Resizer.imageFileResizer(
@@ -94,6 +95,7 @@ function App() {
             );
         });
 
+    //Upload image process...
     const uploadImgHandler = async (e) => {
         // console.log(e);
         let itemIdx = (e.target.id).substring(11,)  ;
@@ -108,14 +110,13 @@ function App() {
         } catch (err) {
             console.log(err);
         }
-        // task[itemIdx].preview=URL.createObjectURL(e.target.files[0]);
-        // window.localStorage.setItem('myToDoList', JSON.stringify(task));
-
     };
+        // setting the flag for re-rendering...
         if(taskFlag)
         {
             setTaskFlag(false);
         }
+
 
     return (
         <div className="App">
