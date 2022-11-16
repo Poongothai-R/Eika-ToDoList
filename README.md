@@ -45,9 +45,6 @@ To deploy this project run
 !
 
 
-## Documentation
-
-[Documentation](https://linktodocumentation)
 
 
 ## Usage
