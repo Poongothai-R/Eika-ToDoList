@@ -98,7 +98,7 @@ function ViewList(props) {
                         { recs.preview ?
                             ( <img className= "itemImage" src={(recs.preview).toString()} alt="ItemImage"  ></img>)
                             :
-                            (<i className="itemImage fa fa-image"></i>)
+                            (<l className= "iconImage" ><i  className="itemImage fa fa-image iconImage"></i></l>)
                         }
                     </label>
                     <input type="file" id={("upload-img-").concat(`${index}`)} style={{display:"none"}} onChange={imgHandler}></input>
@@ -113,17 +113,21 @@ function ViewList(props) {
 
     const renderCompleteItem = completeData.map((recs, index) => {
         return (
+            <div>
             <div key={index} className="complete_data_card">
-                <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price+" kr"}</span>
-                    <span>
+                <div className="complete_data_card_left">
+                <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price+" kr"}</span> </label>
+                </div>
+                <div className="complete_data_card_right">
+                   <label> <span>
                          { recs.preview ?
                              ( <img className= "itemImage" src={(recs.preview).toString()} alt="ItemImage"  ></img>)
                              :
-                             (<i className="itemImage fa fa-image"></i>)
+                             (<i className="itemImage fa fa-image iconImage"></i>)
                          }
-                    </span>
-                </label>
-                <br />
+                    </span></label>
+                </div>
+            </div>
             </div>
         );
     });
