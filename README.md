@@ -20,7 +20,9 @@ To deploy this project run
 - Complete/Hide items from list
 - View items from completed or hidden list
 - Upload Image for each item
-
+- Prevent users from making duplicate entry
+- Prevent Zero priced items
+- Sort list on both Ascending & Descending order
 
 ## Roadmap
 
