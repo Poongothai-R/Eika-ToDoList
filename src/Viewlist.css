@@ -44,13 +44,22 @@ text-align: left;
     margin-left: auto;
  }
 .itemImage {
-    width: 40px;
-    height: 40px;
-
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
 }
 .iconImage {
-    border-radius: 50%;
-    font-size: 40px;
+    border-radius: 50px;
+    font-size: 30px;
+   }
+#name,#price,#addItem{
+    font-size: 15px;
+}
+h2{
+    font-size: 25px;
+}
+h4{
+    font-size: 15px;
 }
 .sort-button, .complete-button  {
     text-decoration: underline;
