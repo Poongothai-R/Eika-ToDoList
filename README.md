@@ -40,7 +40,7 @@ To deploy this project run
 
 ## Process Flow
 
-![App Screenshot](https://i.ibb.co/cyhH4NQ/Drawing.png)
+![App Screenshot](https://i.ibb.co/qnhpQcP/flowchart.png)
 
 
 
