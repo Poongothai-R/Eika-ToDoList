@@ -56,7 +56,7 @@ This webapp is intended mainly for mobile devices to be used for making a shoppi
 
 ## App Screenshots
 
-![App Screenshot](https://i.ibb.co/0sHwFL4/Whats-App-Image-2022-11-15-at-10-49-53-PM-1.jpg)
-![App Screenshot](https://i.ibb.co/DrYVh8D/Whats-App-Image-2022-11-15-at-10-49-54-PM.jpg)
+![App Screenshot](https://i.ibb.co/ssd0NMv/welcome.jpg)
+![App Screenshot](https://i.ibb.co/Gdf0tdR/inputform.jpg)
 ![App Screenshot](https://i.ibb.co/xLmk9Wx/viewlist.jpg)
 ![App Screenshot](https://i.ibb.co/hyjrKgF/completeditem.jpg)
