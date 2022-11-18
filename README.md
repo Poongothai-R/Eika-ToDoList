@@ -23,6 +23,7 @@ To deploy this project run
 - Prevent users from making duplicate entry
 - Prevent Zero priced items
 - Sort list on both Ascending & Descending order
+- Responsive to work on multiple device/screen configurations
 
 ## Roadmap
 
