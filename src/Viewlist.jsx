@@ -2,7 +2,7 @@ import "./Viewlist.css";
 import { useState } from "react";
 
 
-function ViewList(props) {
+function Viewlist(props) {
 
     let data = props.listData;
     let completeData = props.completeData;
@@ -106,8 +106,6 @@ function ViewList(props) {
         );
     });
 
-
-
     // To view the items in the completed list...
 
     const renderCompleteItem = completeData.map((recs, index) => {
@@ -115,7 +113,7 @@ function ViewList(props) {
             <div>
             <div key={index} className="complete_data_card">
                 <div className="complete_data_card_left">
-                <label><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price+" kr"}</span> </label>
+                <label ><span> {(recs.name).toUpperCase()}</span> , <span>{recs.price+" kr"}</span> </label>
                 </div>
                 <div className="complete_data_card_right">
                    <label> <span>
@@ -130,7 +128,6 @@ function ViewList(props) {
             </div>
         );
     });
-
 
     return (
         <div className="view_list">
@@ -156,4 +153,4 @@ function ViewList(props) {
     );
 }
 
-export default ViewList;
+export default Viewlist;

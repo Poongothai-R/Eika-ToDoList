@@ -1,6 +1,6 @@
 import './App.css';
 import GetItemInput from './Inputform';
-import ViewList from './Viewlist';
+import Viewlist from './Viewlist';
 import Header from "./Header";
 import Welcome from "./Welcome";
 import Footer from "./Footer";
@@ -136,8 +136,8 @@ function App() {
                     ?
                     (<div> <GetItemInput checkData = {task} AddItem={AddItemHandler} /></div>)
                     :
-                    (<div> <ViewList listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
-                                         checkboxHandle={markItemComplete} addImage={uploadImgHandler}/>
+                    (<div> <Viewlist listData={task} completeData={completeTask} addAnotherItem={AddAnotherItem}
+                                     checkboxHandle={markItemComplete} addImage={uploadImgHandler}/>
                     </div>)
                 )
             }

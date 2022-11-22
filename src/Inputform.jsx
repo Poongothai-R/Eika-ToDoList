@@ -21,7 +21,6 @@ const GetItemInput = (props) => {
         formValidate(e);
     }
 
-
  function formValidate(e)
  {
      let itmName = null;
@@ -89,5 +88,4 @@ const GetItemInput = (props) => {
         </div>
     )
 }
-
 export default GetItemInput;
