@@ -16,10 +16,8 @@ function Viewlist(props) {
         sortOrder: null
     };
 
-
     /* Sort data based on user's input */
     //--- applied code refactoring technique to sort the data by price and item name ----
-
     const sortDataHandle = (e) => {
         e.preventDefault();
         let objIndex = sortData.findIndex(id => id.sortBy === e.target.id);
@@ -35,8 +33,8 @@ function Viewlist(props) {
             sortObj=({
                 sortBy: e.target.id,
                 sortOrder: (objOrder === 'asc') ? 'desc' : 'asc'
-            });
-
+            }
+            );
             sortData[objIndex] = sortObj;
         }
         setSortFlag(true);
@@ -56,7 +54,6 @@ function Viewlist(props) {
     if(sortFlag) {
         setSortFlag(false);
     }
-
 
     //add new item handler
     const addNewItem = (e) => {
@@ -107,7 +104,6 @@ function Viewlist(props) {
     });
 
     // To view the items in the completed list...
-
     const renderCompleteItem = completeData.map((recs, index) => {
         return (
             <div>
@@ -152,5 +148,4 @@ function Viewlist(props) {
         </div>
     );
 }
-
 export default Viewlist;

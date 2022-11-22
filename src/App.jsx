@@ -10,15 +10,12 @@ import Resizer from "react-image-file-resizer";
 
 function App() {
 
-        // Initializing value for add another item to myToDoLIst and completed item to myCompleteList...
-
     const [task, setTask] = useState([]);
     const [completeTask, setCompleteTask] = useState([]);
     const [anotherTask, setAnotherTask] = useState(0);
     const [taskFlag,setTaskFlag] = useState(false);
 
     let ToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
-
 
     useEffect(() => {
         let myLocalToDoList = JSON.parse(window.localStorage.getItem('myToDoList'));
@@ -28,15 +25,12 @@ function App() {
         }
     }, []);
 
-
     useEffect(() => {
         let myLocalCompleteList = JSON.parse(window.localStorage.getItem('myCompleteList'));
         if (myLocalCompleteList) {
             setCompleteTask(myLocalCompleteList);
         }
     }, []);
-
-
 
     // To add item into myToDoList...
     const AddItemHandler = (e) => {
@@ -142,9 +136,7 @@ function App() {
                 )
             }
             </div>
-
             <Footer/>
-
         </div>
     );
 }

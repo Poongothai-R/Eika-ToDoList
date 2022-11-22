@@ -4,7 +4,6 @@ import React, {useState,} from 'react';
 const GetItemInput = (props) => {
 
     // Variable initialization for getting inputs, checking duplicate data and original data
-
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
     const [error, setError] = useState({});
@@ -14,7 +13,6 @@ const GetItemInput = (props) => {
     });
 
     // Form Submission handler
-
     const submitHandler = (e) =>
     {
         e.preventDefault();
@@ -28,14 +26,12 @@ const GetItemInput = (props) => {
      let chkData = null;
      let dataList= (e.target.itemName.value.toString().toUpperCase());
 
-
      // checking empty input fields and duplicate data
      if (e.target.itemName.value === "" || e.target.itemPrice.value === "" || e.target.itemPrice.value === "0")
      {
          if (e.target.itemName.value === "") itmName = "Item Name is Required";
          if (e.target.itemPrice.value === "" ) itmPrice = "Item Price is Required";
          if(e.target.itemPrice.value === "0") itmPrice = "Item Price should be greater than Zero";
-
      }
      else if (duplicateData.includes(dataList))
          chkData = "Item already exists in the list";
@@ -47,16 +43,13 @@ const GetItemInput = (props) => {
          itemPrice: itmPrice,
          checkData: chkData
 
-      });
-
+      }
+      );
  }
-
 
     return (
         <div className="InputLst">
-
             <div className="InputLst_header"><h2>Add item</h2></div>
-
             <form className="InputLst_form" onSubmit={submitHandler}>
 
                 {/*label,input box and error message for item name */ }
@@ -86,6 +79,6 @@ const GetItemInput = (props) => {
                 <label className="error">{error.checkData}</label>
             </form>
         </div>
-    )
+    );
 }
 export default GetItemInput;
